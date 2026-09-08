@@ -1,6 +1,6 @@
 # Musafir Cafe & Roastery ☕✨
 
-**"For the Wanderers, Dreamers & Coffee Lovers — Where Every Sip is a Journey."**
+> "For the Wanderers, Dreamers & Coffee Lovers — Where Every Sip is a Journey."
 
 A luxury, final-level specialty cafe and cultural roastery website built with:
 
