@@ -1,0 +1,111 @@
+@import url("https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800;900&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;0,900;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-heading: "Playfair Display", serif;
+  --font-serif-display: "Cinzel", serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+
+  --color-primary: #190F0A;
+  --color-secondary: #2C1A12;
+  --color-accent: #D49B53;
+  --color-accent-hover: #E2AC65;
+  --color-accent-light: #F7E7CE;
+  --color-terracotta: #C86D51;
+  --color-emerald-deep: #1E382B;
+  
+  --color-cafe-bg: #FBF8F3;
+  --color-cafe-card: #FFFFFF;
+  --color-cafe-card-dark: #22150E;
+  --color-cafe-text: #1C110A;
+  --color-cafe-muted: #786C60;
+  --color-cafe-border: rgba(44, 26, 18, 0.08);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: #FBF8F3;
+  color: #1C110A;
+  overflow-x: hidden;
+}
+
+.dark body {
+  background: #150C07;
+  color: #F7EFE6;
+}
+
+/* Custom Utilities */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.75);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 155, 83, 0.15);
+}
+
+.dark .glass-panel {
+  background: rgba(25, 15, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(212, 155, 83, 0.2);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 155, 83, 0.12);
+  box-shadow: 0 10px 30px -10px rgba(25, 15, 10, 0.08);
+}
+
+.dark .glass-card {
+  background: rgba(34, 21, 14, 0.8);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 155, 83, 0.18);
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+}
+
+.glow-gold {
+  box-shadow: 0 0 35px -5px rgba(212, 155, 83, 0.35);
+}
+
+.glow-gold-sm {
+  box-shadow: 0 0 15px 0 rgba(212, 155, 83, 0.25);
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #F5D399 0%, #D49B53 50%, #B87B2E 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-warm {
+  background: linear-gradient(135deg, #FFFFFF 0%, #F5E6D3 60%, #D49B53 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FBF8F3;
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: #150C07;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D49B53;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #B87B2E;
+}
