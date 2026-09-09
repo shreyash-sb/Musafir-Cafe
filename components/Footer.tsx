@@ -2,11 +2,9 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { Compass, Facebook, Instagram, Mail, MapPin, Phone, Send, Sparkles, Twitter } from "lucide-react";
+import { Compass, Facebook, Instagram, Mail, MapPin, Phone, Send } from "lucide-react";
 import { brand } from "@/data/site";
 import { useToast } from "@/context/ToastContext";
-import { Input } from "@/components/Input";
-import { Button } from "@/components/Button";
 
 export function Footer() {
   const [email, setEmail] = useState("");
@@ -15,36 +13,33 @@ export function Footer() {
   const handleSubscribe = (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    notify("Welcome to the Musafir Club! You'll receive our monthly secret brews and event invitations.");
+    notify("Thank you for joining the Wanderers Club! We'll keep you updated with secret roasts and events.");
     setEmail("");
   };
 
   return (
-    <footer className="relative border-t border-accent/20 bg-[#120804] px-6 py-16 text-white overflow-hidden">
-      <div className="absolute -top-40 left-1/2 -translate-x-1/2 h-80 w-[600px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
-
-      <div className="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-[1.4fr_1fr_1.1fr_1.2fr]">
+    <footer className="border-t border-[#231711]/10 bg-[#1F1511] px-6 py-14 text-white">
+      <div className="mx-auto grid w-full max-w-6xl gap-10 md:grid-cols-[1.3fr_1fr_1.1fr_1.2fr]">
         {/* Col 1: Brand Info */}
         <div>
           <div className="flex items-center gap-3">
-            <div className="grid h-12 w-12 place-items-center rounded-2xl bg-gradient-to-br from-accent to-[#A86B20] text-primary shadow-lg shadow-accent/20">
-              <Compass className="h-6 w-6 text-primary" />
+            <div className="grid h-10 w-10 place-items-center rounded-xl bg-[#C47D3B] text-white">
+              <Compass className="h-5 w-5" />
             </div>
             <div>
-              <strong className="font-heading text-2xl font-bold">{brand.name}</strong>
-              <p className="text-xs font-semibold text-accent">{brand.tagline}</p>
+              <strong className="font-heading text-xl font-bold">{brand.name}</strong>
+              <p className="text-xs text-[#E2AC65]">{brand.tagline}</p>
             </div>
           </div>
 
-          <p className="mt-5 max-w-sm text-xs leading-relaxed text-white/70">
-            A sanctuary for the wandering soul. Handcrafted single-origin coffees, whole-spice zafrani chais, fresh artisan bakery, and soulful acoustics in Baramati.
+          <p className="mt-4 text-xs leading-relaxed text-white/70 max-w-sm">
+            A sanctuary for the wandering soul. Handcrafted single-origin coffees, slow-steamed zafrani chais, artisan bakes, and peaceful conversations in Baramati.
           </p>
 
-          <div className="mt-6 flex gap-3">
+          <div className="mt-5 flex gap-2.5">
             {[
               { icon: Instagram, href: "https://instagram.com" },
               { icon: Facebook, href: "https://facebook.com" },
-              { icon: Twitter, href: "https://twitter.com" },
               { icon: Mail, href: `mailto:${brand.email}` }
             ].map((social, index) => {
               const Icon = social.icon;
@@ -54,10 +49,10 @@ export function Footer() {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-accent hover:border-accent hover:bg-accent hover:text-primary transition duration-300"
+                  className="grid h-8 w-8 place-items-center rounded-full bg-white/10 text-white hover:bg-[#C47D3B] transition"
                   aria-label="Social Link"
                 >
-                  <Icon className="h-4 w-4" />
+                  <Icon className="h-3.5 w-3.5" />
                 </a>
               );
             })}
@@ -66,19 +61,18 @@ export function Footer() {
 
         {/* Col 2: Quick Links */}
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-accent">Quick Explorer</h3>
-          <div className="mt-5 grid gap-2.5 text-xs font-semibold text-white/70">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-[#E2AC65]">Quick Explorer</h3>
+          <div className="mt-4 grid gap-2 text-xs text-white/75">
             {[
               { label: "Home", href: "/" },
-              { label: "Menu & Order", href: "/menu" },
-              { label: "Brew Lab Customizer", href: "/#brew-lab" },
-              { label: "Musafir Diaries", href: "/stories" },
-              { label: "Acoustic Events", href: "/events" },
+              { label: "Artisan Menu & Order", href: "/menu" },
               { label: "Our Story & Roastery", href: "/about" },
               { label: "Cafe Gallery", href: "/gallery" },
+              { label: "Live Events & Workshops", href: "/events" },
+              { label: "Musafir Journal", href: "/stories" },
               { label: "Contact & Location", href: "/contact" }
             ].map((item) => (
-              <Link key={item.label} href={item.href} className="hover:text-accent transition">
+              <Link key={item.label} href={item.href} className="hover:text-[#E2AC65] transition">
                 {item.label}
               </Link>
             ))}
@@ -87,56 +81,59 @@ export function Footer() {
 
         {/* Col 3: Hours & Address */}
         <div>
-          <h3 className="text-xs font-bold uppercase tracking-[0.25em] text-accent">Timings & Location</h3>
-          <div className="mt-5 grid gap-2 text-xs text-white/70">
+          <h3 className="text-xs font-bold uppercase tracking-wider text-[#E2AC65]">Timings & Address</h3>
+          <div className="mt-4 space-y-1 text-xs text-white/75">
             {brand.hours.map((hour) => (
               <span key={hour} className="block">{hour}</span>
             ))}
           </div>
 
-          <p className="mt-5 flex gap-2.5 text-xs text-white/70 leading-relaxed">
-            <MapPin className="h-5 w-5 text-accent shrink-0 mt-0.5" />
+          <p className="mt-4 flex gap-2 text-xs text-white/75 leading-relaxed">
+            <MapPin className="h-4 w-4 text-[#E2AC65] shrink-0 mt-0.5" />
             <span>{brand.address}</span>
           </p>
 
-          <p className="mt-3 flex gap-2.5 text-xs text-white/70">
-            <Phone className="h-4 w-4 text-accent shrink-0" />
-            <a href={`tel:${brand.phone}`} className="hover:text-accent transition">
+          <p className="mt-2.5 flex gap-2 text-xs text-white/75">
+            <Phone className="h-4 w-4 text-[#E2AC65] shrink-0" />
+            <a href={`tel:${brand.phone}`} className="hover:text-[#E2AC65] transition">
               {brand.phone}
             </a>
           </p>
         </div>
 
         {/* Col 4: Newsletter */}
-        <form onSubmit={handleSubscribe} className="rounded-3xl border border-accent/20 bg-[#1E110A]/90 p-6 shadow-xl">
-          <span className="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest text-accent">
-            <Sparkles className="h-3.5 w-3.5" />
+        <form onSubmit={handleSubscribe} className="rounded-2xl border border-white/10 bg-white/5 p-5">
+          <span className="text-[10px] font-bold uppercase tracking-wider text-[#E2AC65]">
             Wanderers Club
           </span>
-          <h3 className="font-heading text-lg font-bold text-white mt-1">The Musafir Gazette</h3>
-          <p className="mt-2 text-xs leading-relaxed text-white/70">
-            Receive secret single-origin drops, masterclass passes, and exclusive discounts.
+          <h3 className="font-heading text-base font-bold text-white mt-1">Musafir Gazette</h3>
+          <p className="mt-1.5 text-xs text-white/70 leading-relaxed">
+            Receive updates on seasonal single-origin roasts, weekend live music, and member treats.
           </p>
-          <div className="mt-4 space-y-3">
-            <Input
+          <div className="mt-3.5 space-y-2">
+            <input
               type="email"
               required
-              placeholder="Enter your email"
+              placeholder="Your email address"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              className="w-full rounded-xl border border-white/15 bg-black/20 px-3 py-2 text-xs text-white outline-none focus:border-[#C47D3B]"
               aria-label="Email address"
             />
-            <Button type="submit" className="w-full text-xs">
-              <Send className="h-3.5 w-3.5 mr-2" />
-              Join Club
-            </Button>
+            <button
+              type="submit"
+              className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-[#C47D3B] py-2 text-xs font-semibold text-white shadow hover:bg-[#B36E2E] transition"
+            >
+              <Send className="h-3 w-3" />
+              Subscribe
+            </button>
           </div>
         </form>
       </div>
 
-      <div className="mx-auto mt-14 flex max-w-6xl flex-wrap justify-between gap-4 border-t border-white/10 pt-6 text-xs text-white/50">
-        <span>© 2026 Musafir Cafe & Roastery. All rights reserved.</span>
-        <span>Crafted for dreamers, thinkers, and coffee connoisseurs.</span>
+      <div className="mx-auto mt-12 flex max-w-6xl flex-wrap justify-between gap-3 border-t border-white/10 pt-6 text-xs text-white/50">
+        <span>© {new Date().getFullYear()} Musafir Cafe & Roastery • Baramati</span>
+        <span>A sweet and slow sanctuary for wanderers.</span>
       </div>
     </footer>
   );

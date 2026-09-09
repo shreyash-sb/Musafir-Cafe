@@ -1,18 +1,20 @@
-# Musafir Cafe & Roastery ☕✨
+# Musafir Cafe & Roastery ☕
 
-> "For the Wanderers, Dreamers & Coffee Lovers — Where Every Sip is a Journey."
+> *"For the Wanderers, Dreamers & Coffee Lovers — Where Every Sip is a Journey."*
 
-A luxury, final-level specialty cafe and cultural roastery website built with:
+A sweet, simple, and classic website for **Musafir Cafe & Roastery** in Baramati, Maharashtra.
 
-- **Next.js App Router** (React 19, TypeScript)
-- **Tailwind CSS** with custom luxury tokens, glassmorphism & gold gradients
-- **Framer Motion** fluid micro-interactions and page transitions
-- **Web Audio API** synthesized background cafe rain & lo-fi ambience generator
-- **Interactive Musafir Brew Lab** (Custom roast, milk, temp & spice drink builder)
-- **Interactive Visual Table Booking Engine** with instant digital reservation pass generation
-- **Digital Receipt & Invoice Slip Generator** with order tracking & print support
-- **Context API** state for cart, discount coupons, wishlist, dark/light theme, and animated toasts
-- **Backend API Route Handlers** for contact enquiries, reservations, and orders
+Built with:
+- **Next.js 15 App Router** (React 19, TypeScript)
+- **Classic Typography**: Warm literary serif (`Playfair Display`) and crystal-clear body text (`Plus Jakarta Sans`)
+- **Tailwind CSS** with warm ivory/linen (`#FAF7F2`), rich espresso (`#231711`), and warm amber (`#C47D3B`) accents
+- **Single-Screen Table Booking**: Instant digital pass generation for Baramati cafe seating
+- **Interactive Artisan Menu**: Quick view modal, category filters, dietary tags (Bestseller, Chef's Special, Vegan, Organic), search, and price/rating sorting
+- **Streamlined Ordering & Cart**: Dine-in (Table #), Takeaway, and Baramati Delivery with coupon discounts, tip, and printable digital receipts
+- **Live Events & Community**: Live acoustic nights, latte art workshops, and poetry open mics with instant RSVP
+- **Musafir Journal & Story**: Single-origin sourcing ethics from Karnataka estates and wanderer essays
+- **Cafe Gallery**: Responsive visual gallery with lightbox modal
+- **Context State**: Cart, wishlist, toast notifications, and dark/light mode
 
 ---
 
@@ -22,9 +24,9 @@ A luxury, final-level specialty cafe and cultural roastery website built with:
 npm run dev
 ```
 
-Open the printed URL in your browser (default `http://localhost:4500` or next free port).
+Open `http://localhost:4500` in your browser.
 
-## Production Build & Start
+## Production Build
 
 ```powershell
 npm run build
@@ -33,15 +35,13 @@ npm start
 
 ---
 
-## 🌟 Key Features & Pages
+## ☕ Pages & Architecture
 
-- **`/` (Atmospheric Homepage)**: Floating glowing badges, live operational status (*"Open Now • Baramati"*), featured categories, interactive Brew Lab, popular creations with quick view modals, heritage story split, Musafir Diaries, Live Acoustic Events, and verified testimonials.
-- **`/#brew-lab` (Musafir Brew Lab)**: Interactive coffee customizer — pick roast intensity, milk type, temperature, sweetness, and artisan spices (Kashmiri Saffron, Green Cardamom, Ceylon Cinnamon) with live calculated price and flavor profile radar.
-- **`/menu` (Filterable & Searchable Menu)**: Filter by category, dietary tags (*Vegan, Bestseller, Chef's Special, Organic*), price sorting, instant search, and quick view detail modal.
-- **`/cart` (Checkout & Digital Bill Slip Generator)**: Switch between Delivery / Takeaway / Dine-in table service, apply discount coupons (`MUSAFIR10`, `FIRSTBREW`, `TRAVELER20`), barista tips, and instant generation of a printable **Digital Musafir Bill Slip**.
-- **`/stories` (Musafir Diaries)**: Cultural essays, single-origin sourcing lore, and brewing journals.
-- **`/events` (Acoustics & Gatherings)**: Live Sufi and indie strings nights, latte art masterclasses, and poetry open mics with interactive RSVP modal.
-- **`/about` (Heritage & Roastery)**: Story of Musafir Cafe, single-origin ethics from Karnataka hills, milestone timeline, and core values.
-- **`/gallery` (Visual Moodboard)**: Masonry gallery with category filters and full-screen lightbox with keyboard navigation.
-- **`/contact` (Concierge & Locations)**: Direct WhatsApp contact button, Google Maps direction guide, interactive table reservation shortcut, and FAQ accordion.
-- **`/login` & `/register`**: Luxury authentication screens with guest checkout shortcuts and club benefits.
+- **`/` (Home)**: Classic hero, curated menu categories, signature creations, sourcing story, seating spaces, upcoming live events, guest reviews, and table booking banner.
+- **`/menu` (Artisan Menu)**: Full catalog of single-origin brews, zafrani chais, fresh sourdoughs, and bakery items with filters, search, and quick view modals.
+- **`/about` (Our Story)**: The founding odyssey, shade-grown Karnataka harvesting ethics, milestones, and 100% pure vegetarian kitchen philosophy.
+- **`/gallery` (Moments)**: Visual gallery with category filtering (Coffee, Interior, Food, Events) and lightbox.
+- **`/events` (Acoustic Evenings)**: Weekly live music, workshops, and open mics with simple 1-click RSVP.
+- **`/stories` (Musafir Journal)**: Essays on coffee culture, zafrani chai brewing lore, and traveler reflections.
+- **`/contact` (Visit & Contact)**: Baramati address, Google Maps link, WhatsApp concierge button, phone, hours, and message form.
+- **`/cart` (Basket & Checkout)**: Order options (Dine-in, Takeaway, Delivery), coupon discounts, and instant digital receipt.

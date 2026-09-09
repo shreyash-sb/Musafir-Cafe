@@ -3,29 +3,43 @@ import { ButtonHTMLAttributes } from "react";
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
   href?: string;
-  variant?: "primary" | "secondary" | "ghost" | "accent";
+  variant?: "primary" | "secondary" | "outline" | "ghost";
+  size?: "sm" | "md" | "lg";
 };
 
-const styles = {
-  primary: "bg-accent text-primary shadow-xl shadow-accent/20 hover:bg-accent-hover hover:scale-[1.02] active:scale-[0.98]",
-  secondary: "border border-accent/40 bg-white/80 text-primary hover:border-accent hover:bg-accent/15 dark:bg-[#1E110A] dark:text-white dark:hover:bg-white/10",
-  ghost: "text-primary hover:bg-primary/5 dark:text-white dark:hover:bg-white/10",
-  accent: "bg-primary text-white hover:bg-secondary dark:bg-white/15 dark:text-white dark:hover:bg-accent dark:hover:text-primary"
+const variants = {
+  primary: "bg-[#C47D3B] text-white hover:bg-[#B36E2E] shadow-md shadow-[#C47D3B]/20 active:scale-[0.98]",
+  secondary: "bg-[#231711] text-white hover:bg-[#3A251C] shadow-sm active:scale-[0.98] dark:bg-[#FAF7F2] dark:text-[#231711] dark:hover:bg-white",
+  outline: "border border-[#C47D3B]/40 bg-transparent text-[#C47D3B] hover:bg-[#C47D3B]/10 dark:text-[#E2AC65] dark:border-[#C47D3B]/50",
+  ghost: "text-[#231711] hover:bg-[#231711]/5 dark:text-white dark:hover:bg-white/10"
 };
 
-export function Button({ href, variant = "primary", className = "", children, ...props }: ButtonProps) {
-  const shared = `inline-flex min-h-12 items-center justify-center rounded-full px-6 text-xs sm:text-sm font-bold transition-all duration-300 cursor-pointer ${styles[variant]} ${className}`;
+const sizes = {
+  sm: "min-h-9 px-3.5 text-xs font-semibold rounded-full",
+  md: "min-h-11 px-5 text-xs sm:text-sm font-semibold rounded-full",
+  lg: "min-h-13 px-7 text-sm sm:text-base font-semibold rounded-full"
+};
+
+export function Button({
+  href,
+  variant = "primary",
+  size = "md",
+  className = "",
+  children,
+  ...props
+}: ButtonProps) {
+  const baseStyles = `inline-flex items-center justify-center gap-2 transition-all duration-200 cursor-pointer ${variants[variant]} ${sizes[size]} ${className}`;
 
   if (href) {
     return (
-      <Link href={href} className={shared}>
+      <Link href={href} className={baseStyles}>
         {children}
       </Link>
     );
   }
 
   return (
-    <button className={shared} {...props}>
+    <button className={baseStyles} {...props}>
       {children}
     </button>
   );
