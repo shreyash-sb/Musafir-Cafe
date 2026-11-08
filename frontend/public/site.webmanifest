@@ -1,0 +1,18 @@
+{
+  "name": "Musafir Cafe & Roastery",
+  "short_name": "Musafir Cafe",
+  "description": "Where Every Sip is a Journey — Specialty Coffee & Artisan Bakery in Baramati",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FAF7F2",
+  "theme_color": "#231711",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
+
